@@ -1,0 +1,82 @@
+Q1. What is Emmet?
+Ans. Emmet is a free add-on for your text editor. It allows you to type shortcuts that are then expanded into full pieces of code.
+By using Emmet, developers type less, they save both on keystrokes and time.
+
+Q2. Difference between library and framework
+Ans. Technical difference between library and framework lies in a term called 'inversion of control'.
+**Inversion of Control** is a design principle that allows classes to be loosely coupled and, therefore, easier to test and maintain.
+IoC refers to transferring the control of objects and their dependencies from the main program to a container or framework.
+
+# Framework
+
+    - It is like building a model home. You have a set of blueprints and a few limited choices when it comes to architecture and design.
+    Ultimately, the contractor and blueprint are in control. And they will let you know when and where you can provide your input.
+
+    - It comprises of lot of APIs, compilers, support programs, libraries etc.
+    
+    - When you use a framework, the framework is in charge of the flow. It provides some places for you to plug in your code,
+    but it calls the code you plugged in as needed.
+
+    - A framework development requires a lot of code that decrease performance and increase the load time.
+    
+    - It is difficult to replace frameworks.
+    
+    - Including framework smoothly into an existing project is impossible.
+    
+    - Its example are AngularJs, Spring, etc.
+
+# Library
+
+    - It is like You already have a home, but you need a bit of help with furniture.
+    
+    - It is a collection of helper modules, classes, objects, functions, pre-written code, etc.
+    
+    - When you use a library, you are in charge of the flow of the application. You are choosing when and where to call the library.
+    
+    - Building a library requires less code, so there is better performance and fast load time.
+    
+    - A library is easy to be replaced with another library.
+    
+    - Libraries can be integrated easily into existing projects to add some specific functionality.
+    
+    - Its example are JQuery, ReactJs, etc.
+
+Q3. What is CDN?
+Ans.
+
+# A group of servers spread out over a region or around the world that work together to speed up content delivery on the web.
+
+The servers in a CDN temporarily store(or cache) webpage content like HTML pages, javascript files, stylesheets, images, and videos.
+
+Benefits:
+better performance, increased reliability, cost savings, and resilience against cyber attacks.
+
+Q4. Why is React known as React?
+Ans. React was designed to allow developers to "react" to changes in state and data within an application.
+
+Q5. What is crossorigin in script tag?
+Ans. Provides support for CORS i.e, defining how the element handles cross-origin requests.
+
+Q6. What is diference between React and ReactDOM?
+Ans. React library is responsible for building user interfaces and ReactDOM library allows React to interact with the DOM
+i.e, render UI in the browser.
+
+Q7. What is difference between react.development.js and react.production.js files via CDN?
+Ans. 
+- Development mode includes useful warnings and gives you access to tools that make development and debugging easier. 
+- Production mode minifies your code and better represents the performance your app will have on end users devices.
+
+Note: development build is slower than the production build
+
+Q8. What is async and defer?
+Ans.
+
+# Async
+
+- script is downloaded asynchronously without pausing HTML parsing. Once the script downloaded parsing will be paused and the script's execution will happen.
+when execution done parsing will resume.
+
+# Defer
+
+- It tells the browser not to interfere with HTML parsing and execute the script file once the HTML document fully parsed.
+in this also script is downloaded asynchronously.
