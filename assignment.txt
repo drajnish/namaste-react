@@ -1,0 +1,36 @@
+Q. What is JSX?
+Ans. JSX is a html like syntax which is a syntax extension to javaScript.
+It is a fency way of writing html inside javaScript.
+
+Q. Superpowers of JSX?
+Ans. 
+- In JSX inside {} we can write any javaScript expression.
+- It prevents XXS attacks by sanitizing the code.
+
+Q. Role of `type` attribute in script tag? What option can i use there?
+Ans. It indicates the type of script represented by element.
+
+# Attribute not set(default), an empty string, or a javaScript MIME type
+    - indicates that it is a "classic script", contains js code.
+
+# module
+    - It causes the code to be treated as js module.
+    - The processing of script content is deferred.
+
+# importmap
+    - It indicates that body of the element contains an imported map.
+    - import map is a json object that can be used to control how browser resolve module specifiers when importing js modules.
+
+# Any other value
+    - The embeded content is treated as data block, and won't be processed by the browser.
+    - must use a valid MIME type which is not a js MIME type to denote data blocks.
+        All other attributes will be ignored including src attribute.
+
+Q. {TitleComponent} vs {<TitleComponent />} vs {<TitleComponent></TitleComponent>} in JSX?
+Ans. 
+{TitleComponent} => It is a way of representing an element inside JSX.
+
+{<TitleComponent />} => It is a way of representing a component.
+
+{<TitleComponent></TitleComponent>} => It is same as above except it can have childrens.
+
