@@ -171,126 +171,6 @@ const restaurantList = [
     type: 'restaurant',
     data: {
       type: 'F',
-      id: '526205',
-      name: 'Healthy Breakfast & Shakes',
-      uuid: 'b9ffbd15-19be-471d-bbd8-e5a263893972',
-      city: '55',
-      area: 'Geetanjali complex',
-      totalRatingsString: 'Too Few Ratings',
-      cloudinaryImageId: 'kylokxf5x3bqdjxavlw1',
-      cuisines: ['Fast Food', 'North Indian', 'South Indian'],
-      tags: [],
-      costForTwo: 20000,
-      costForTwoString: '₹200 FOR TWO',
-      deliveryTime: 44,
-      minDeliveryTime: 44,
-      maxDeliveryTime: 44,
-      slaString: '44 MINS',
-      lastMileTravel: 5.699999809265137,
-      slugs: {
-        restaurant: 'healthy-breakfast-&-shakes-mp-nagar-mp-nagar',
-        city: 'bhopal',
-      },
-      cityState: '55',
-      address:
-        'Block number 13, 2nd gate,Main road,  Geetanjali complex,south T.T.Nagar,  Bhopal, Bhopal, Bhopal, Bhopal, Madhya  Pradesh - 462003',
-      locality: 'MP Nagar',
-      parentId: 317128,
-      unserviceable: false,
-      veg: false,
-      select: false,
-      favorite: false,
-      tradeCampaignHeaders: [],
-      aggregatedDiscountInfo: {
-        header: '50% off',
-        shortDescriptionList: [
-          {
-            meta: '50% off | Use WELCOME50',
-            discountType: 'Percentage',
-            operationType: 'RESTAURANT',
-          },
-        ],
-        descriptionList: [
-          {
-            meta: '50% off up to ₹80 | Use code WELCOME50',
-            discountType: 'Percentage',
-            operationType: 'RESTAURANT',
-          },
-        ],
-        subHeader: '',
-        headerType: 0,
-        superFreedel: '',
-      },
-      aggregatedDiscountInfoV2: {
-        header: '50% OFF',
-        shortDescriptionList: [
-          {
-            meta: 'Use WELCOME50',
-            discountType: 'Percentage',
-            operationType: 'RESTAURANT',
-          },
-        ],
-        descriptionList: [
-          {
-            meta: '50% off up to ₹80 | Use code WELCOME50',
-            discountType: 'Percentage',
-            operationType: 'RESTAURANT',
-          },
-        ],
-        subHeader: '',
-        headerType: 0,
-        superFreedel: '',
-      },
-      chain: [],
-      feeDetails: {
-        fees: [],
-        totalFees: 0,
-        message: '',
-        title: '',
-        amount: '',
-        icon: '',
-      },
-      availability: {
-        opened: true,
-        nextOpenMessage: '',
-        nextCloseMessage: '',
-      },
-      longDistanceEnabled: 0,
-      rainMode: 'NONE',
-      thirdPartyAddress: false,
-      thirdPartyVendor: '',
-      adTrackingID: '',
-      badges: {
-        imageBased: [],
-        textBased: [],
-        textExtendedBadges: [],
-      },
-      lastMileTravelString: '5.6 kms',
-      hasSurge: false,
-      sla: {
-        restaurantId: '526205',
-        deliveryTime: 44,
-        minDeliveryTime: 44,
-        maxDeliveryTime: 44,
-        lastMileTravel: 5.699999809265137,
-        lastMileDistance: 0,
-        serviceability: 'SERVICEABLE',
-        rainMode: 'NONE',
-        longDistance: 'NOT_LONG_DISTANCE',
-        preferentialService: false,
-        iconType: 'EMPTY',
-      },
-      promoted: false,
-      avgRating: '--',
-      totalRatings: 0,
-      new: false,
-    },
-    subtype: 'basic',
-  },
-  {
-    type: 'restaurant',
-    data: {
-      type: 'F',
       id: '526209',
       name: 'Eggs On Wheels',
       uuid: 'e371307d-3daa-43b1-a60a-c3f1a43fdf81',
@@ -890,27 +770,19 @@ const restaurantList = [
   },
 ];
 
-const burgerKing = {
-  name: 'Burger King',
-  image:
-    'https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/kack9oun6qtoz1tzbt0i',
-  cusines: ['Burger', 'American'],
-  rating: '4.2',
-};
-
-const RestaurantCard = ({ restaurant }) => {
+const RestaurantCard = ({ name, cuisines, cloudinaryImageId, area }) => {
   return (
     <div className="card">
       <img
         src={
           'https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/' +
-          restaurant?.data?.cloudinaryImageId
+          cloudinaryImageId
         }
-        alt={restaurant?.data?.name}
+        alt={name}
       />
-      <h2>{restaurant?.data?.name}</h2>
-      <h3>{restaurant?.data?.cuisines.join(', ')}</h3>
-      <h4>{restaurant?.data?.area} </h4>
+      <h2>{name}</h2>
+      <h3>{cuisines.join(', ')}</h3>
+      <h4>{area} </h4>
     </div>
   );
 };
@@ -918,13 +790,12 @@ const RestaurantCard = ({ restaurant }) => {
 const Body = () => {
   return (
     <div className="restaurant-list">
-      <RestaurantCard restaurant={restaurantList[0]} />
-      <RestaurantCard restaurant={restaurantList[1]} />
-      <RestaurantCard restaurant={restaurantList[2]} />
-      <RestaurantCard restaurant={restaurantList[3]} />
-      <RestaurantCard restaurant={restaurantList[4]} />
-      <RestaurantCard restaurant={restaurantList[5]} />
-      <RestaurantCard restaurant={restaurantList[6]} />
+      <RestaurantCard {...restaurantList[0]?.data} />
+      <RestaurantCard {...restaurantList[1]?.data} />
+      <RestaurantCard {...restaurantList[2]?.data} />
+      <RestaurantCard {...restaurantList[3]?.data} />
+      <RestaurantCard {...restaurantList[4]?.data} />
+      <RestaurantCard {...restaurantList[5]?.data} />
     </div>
   );
 };
