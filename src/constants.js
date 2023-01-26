@@ -1,53 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+export const CDN_IMG_LINK =
+  'https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/';
 
-/**
- * Header
- *  - Logo
- *  - Nav Items (right side)
- *  - Cart
- *
- * Body
- *  - Search bar
- *  - Restaurant List
- *      - RestaurantCards
- *          - Image
- *          - Name
- *          - Rating
- *          - Cusines
- *
- * Footer
- *  - Links
- *  - Copyright
- *
- */
-const Title = () => (
-  <a href="/">
-    <img
-      className="logo"
-      src="https://yt3.googleusercontent.com/ytc/AMLnZu_EC-ECXAxRAixWGEfMsE1rdSoetBHyxmLNdtCB=s900-c-k-c0x00ffffff-no-rj"
-      alt="logo"
-    />
-  </a>
-);
-
-const Header = () => {
-  return (
-    <div className="header">
-      <Title />
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-const restaurantList = [
+export const restaurantList = [
   {
     type: 'restaurant',
     data: {
@@ -769,52 +723,3 @@ const restaurantList = [
     subtype: 'basic',
   },
 ];
-
-const RestaurantCard = ({ name, cuisines, cloudinaryImageId, area }) => {
-  return (
-    <div className="card">
-      <img
-        src={
-          'https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/' +
-          cloudinaryImageId
-        }
-        alt={name}
-      />
-      <h2>{name}</h2>
-      <h3>{cuisines.join(', ')}</h3>
-      <h4>{area} </h4>
-    </div>
-  );
-};
-
-const Body = () => {
-  return (
-    <div className="restaurant-list">
-      {restaurantList.map((restaurant) => {
-        return (
-          <RestaurantCard key={restaurant?.data?.id} {...restaurant?.data} />
-        );
-      })}
-    </div>
-  );
-};
-
-const Footer = () => {
-  return <h4>Footer</h4>;
-};
-
-const AppLayout = () => {
-  return (
-    <>
-      <Header />
-      <Body />
-      <Footer />
-    </>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-
-root.render(<AppLayout />);
-
-export default AppLayout;
