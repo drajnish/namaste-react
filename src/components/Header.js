@@ -1,14 +1,11 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import IMG_LOGO from '../assets/img/logo.jpg';
 
 const Title = () => (
-  <a href="/">
-    <img
-      className="logo"
-      src="https://yt3.googleusercontent.com/ytc/AMLnZu_EC-ECXAxRAixWGEfMsE1rdSoetBHyxmLNdtCB=s900-c-k-c0x00ffffff-no-rj"
-      alt="logo"
-    />
-  </a>
+  <Link to="/">
+    <img className="logo" src={IMG_LOGO} alt="logo" />
+  </Link>
 );
 
 const Header = () => {
