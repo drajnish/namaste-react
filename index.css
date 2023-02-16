@@ -67,3 +67,13 @@ body {
   background-color: lightgray;
   margin: 20px;
 }
+
+.profile-class {
+  display: flex;
+  justify-content: space-around;
+}
+
+.profile-pic {
+  width: 150px;
+  border-radius: 50%;
+}

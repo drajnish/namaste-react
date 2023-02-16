@@ -3,19 +3,49 @@ import React from 'react';
 class ProfileClass extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      userInfo: {
+        name: 'Jon Doe',
+        location: 'Delhi',
+      },
+    };
     console.log('child class - constructor');
   }
 
-  componentDidMount() {
-    console.log('child class - componentDidMount');
+  async componentDidMount() {
+    console.log('child class - componentDidMount before api call');
+    const data = await fetch('https://api.github.com/users/drajnish');
+    const json = await data.json();
+    this.setState({
+      userInfo: json,
+    });
+
+    console.log('child class - componentDidMount after api call');
+  }
+
+  componentDidUpdate() {
+    console.log('componentDidUpdate');
+  }
+
+  componentWillUnmount() {
+    console.log('componentWillUpdate');
   }
 
   render() {
     console.log('child class - render');
+    const { name, location, avatar_url, bio } = this?.state?.userInfo;
     return (
-      <div>
-        <h1>{this.props.name}'s class based profile</h1>
-      </div>
+      <>
+        <h1>Profile class component</h1>
+        <div className="profile-class">
+          <img className="profile-pic" src={avatar_url} alt="profile picture" />
+          <div>
+            <h2>Name: {name}</h2>
+            <h4>( {bio} )</h4>
+            <h3>Location: {location}</h3>
+          </div>
+        </div>
+      </>
     );
   }
 }
