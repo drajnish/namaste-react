@@ -1,8 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Profile = (props) => {
   const [count, setCount] = useState(0);
   const [count2, setCount2] = useState(1);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      console.log('Interval in functional component');
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <div>

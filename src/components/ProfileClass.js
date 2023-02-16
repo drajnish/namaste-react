@@ -20,10 +20,6 @@ class ProfileClass extends React.Component {
       userInfo: json,
     });
 
-    this.timer = setInterval(() => {
-      console.log('Namaste React OP');
-    }, 1000);
-
     console.log('child class - componentDidMount after api call');
   }
 
@@ -32,7 +28,6 @@ class ProfileClass extends React.Component {
   }
 
   componentWillUnmount() {
-    clearInterval(this.timer);
     console.log('componentWillUnmount');
   }
 
