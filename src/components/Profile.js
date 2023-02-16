@@ -1,47 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-class Profile extends React.Component {
-  constructor() {
-    super();
+const Profile = (props) => {
+  const [count, setCount] = useState(0);
+  const [count2, setCount2] = useState(1);
 
-    this.state = {
-      count: 0,
-      count2: 1,
-    };
-    console.log('Child - constructor');
-  }
-
-  componentDidMount() {
-    console.log('Child - componentDidMount');
-  }
-
-  render() {
-    console.log('Child - render');
-    return (
-      <div>
-        <h1>This is {this.props.name}'s profile page</h1>
-        <button
-          onClick={() =>
-            this.setState({
-              count: this.state.count + 1,
-              count2: this.state.count2 + 2,
-            })
-          }
-        >
-          {this.state.count}
-        </button>
-        <button
-          onClick={() =>
-            this.setState({
-              count2: this.state.count2 * 2,
-            })
-          }
-        >
-          {this.state.count2}
-        </button>
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <h1>Function Component</h1>
+      <h1>{props.name}</h1>
+      <button onClick={() => setCount(count + 1)}>{count}</button>
+      <button onClick={() => setCount2(count2 * 2)}>{count2}</button>
+    </div>
+  );
+};
 
 export default Profile;
