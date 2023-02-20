@@ -47,7 +47,7 @@ Order of life cycle method -
 - componentDidUpdate() -> invoked immediately after updating occurs.
 - componentWillUnmount() -> invoked just before a component unmounted.
 
-![React Life Cycle Methods Diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
+[React Life Cycle Methods Diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
 
 Q4. Why do we use componentDidMount?
 Ans. It is a lifecycle method in React that gets called after a component is mounted or inserted into the DOM i.e, after the component is rendered. It is commonly used to perform actions that require access to the DOM or to set up subscriptions to external data sources.
