@@ -1,19 +1,21 @@
 import { useState, useEffect } from 'react';
-import { FETCH_MENU_URL } from '../constants';
 
-const useRestaurant = (restaurantId) => {
-  const [restaurant, setRestaurant] = useState(null);
+import { FETCH_RESTAURANT_LINK } from '../constants';
+
+const useRestaurant = (setAllRestaurants, setFilteredRestaurants) => {
+  let initialData;
 
   useEffect(() => {
-    filterData();
+    getRestaurants();
   }, []);
 
-  async function filterData() {
-    const data = await fetch(FETCH_MENU_URL + restaurantId);
-    const json = await data.json();
-    setRestaurant(json.data);
+  async function getRestaurants() {
+    const data = await fetch(FETCH_RESTAURANT_LINK);
+    const res = await data.json();
+    initialData = res?.data?.cards[2]?.data?.data?.cards;
+    setAllRestaurants(initialData);
+    setFilteredRestaurants(initialData);
   }
-  return restaurant;
 };
 
 export default useRestaurant;
