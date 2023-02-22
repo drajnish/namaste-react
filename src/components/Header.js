@@ -6,7 +6,7 @@ import useOnline from '../utils/useOnline';
 
 const Title = () => (
   <Link to="/">
-    <img className="logo" src={IMG_LOGO} alt="logo" />
+    <img className="h-28 p-2" src={IMG_LOGO} alt="logo" />
   </Link>
 );
 
@@ -16,10 +16,10 @@ const Header = () => {
   const isOnline = useOnline();
 
   return (
-    <div className="header">
+    <div className="flex">
       <Title />
       <div className="nav-items">
-        <ul>
+        <ul className="flex">
           <Link to="/">
             <li>Home</li>
           </Link>
