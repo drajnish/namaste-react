@@ -1,6 +1,7 @@
 import React from 'react';
 import Profile from './Profile';
 import ProfileClassComp from './ProfileClass';
+import UserContext from '../utils/UserContext';
 
 class About extends React.Component {
   constructor(props) {
@@ -21,6 +22,15 @@ class About extends React.Component {
         <p>
           This is the Namaste React Live Course Chapter 07 - Finding the path
         </p>
+
+        <UserContext.Consumer>
+          {({ user }) => (
+            <h4 className="font-bold text-3xl m-2 p-2">
+              {user.name}- {user.email}
+            </h4>
+          )}
+        </UserContext.Consumer>
+
         <Profile name={'Rajnish Deshmukh'} />
         <ProfileClassComp name={'React'} />
       </div>

@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import IMG_LOGO from '../assets/img/logo.jpg';
 
 import useOnline from '../utils/useOnline';
+import UserContext from '../utils/UserContext';
 
 const Title = () => (
   <Link to="/">
@@ -14,6 +15,7 @@ const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const isOnline = useOnline();
+  const { user } = useContext(UserContext);
 
   return (
     <div className="flex justify-between bg-pink-50 shadow-lg">
@@ -34,6 +36,8 @@ const Header = () => {
             <li className="px-2">Instamart</li>
           </Link>
         </ul>
+        <span className="px-2">{user.name}</span>
+        <span className="px-2">{user.email}</span>
       </div>
       {isOnline ? '' : 'Looks like you are offline.'}
 
